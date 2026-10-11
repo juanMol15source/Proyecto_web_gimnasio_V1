@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gimnasio Fuerza</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+</head>
+<body>
+    <header class="cabecera">
+        <div class="cabecera__interior">
+            <a class="logo" href="{{ url_for('inicio') }}">💪 Gimnasio <span>Fuerza</span></a>
+            <nav class="menu">
+                <a href="{{ url_for('inicio') }}" class="{{ 'activo' if request.path == url_for('inicio') }}">Inicio</a>
+                <a href="{{ url_for('registro') }}" class="{{ 'activo' if request.path == url_for('registro') }}">Registro</a>
+                <a href="{{ url_for('inscripcion') }}" class="{{ 'activo' if request.path == url_for('inscripcion') }}">Comprar plan</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="contenido">
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <footer class="pie">
+        <p>© Gimnasio Fuerza · Proyecto Flask</p>
+    </footer>
+</body>
+</html>

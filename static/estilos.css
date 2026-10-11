@@ -1,0 +1,279 @@
+:root {
+    --acento: #ff5a1f;
+    --acento-oscuro: #e04510;
+    --oscuro: #14161a;
+    --texto: #1f2430;
+    --suave: #6b7280;
+    --fondo: #f4f5f7;
+    --blanco: #ffffff;
+    --borde: #e5e7eb;
+    --radio: 14px;
+    --sombra: 0 10px 30px rgba(20, 22, 26, 0.08);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+/* ---------- Cabecera ---------- */
+.cabecera {
+    background: var(--oscuro);
+    color: var(--blanco);
+    border-bottom: 4px solid var(--acento);
+}
+
+.cabecera__interior {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.logo {
+    color: var(--blanco);
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--acento);
+}
+
+.menu {
+    display: flex;
+    gap: 6px;
+}
+
+.menu a {
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+}
+
+.menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--blanco);
+}
+
+.menu a.activo {
+    background: var(--acento);
+    color: var(--blanco);
+}
+
+/* ---------- Contenido ---------- */
+.contenido {
+    flex: 1;
+    width: 100%;
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 32px;
+    background: var(--blanco);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+}
+
+h2 {
+    margin: 32px 0 16px;
+    font-size: 1.5rem;
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--acento);
+    display: inline-block;
+}
+
+.contenido > h2:first-child {
+    margin-top: 0;
+}
+
+.ayuda {
+    margin: 0 0 16px;
+    color: var(--suave);
+}
+
+/* ---------- Portada ---------- */
+.hero {
+    text-align: center;
+    padding: 36px 20px;
+    margin-bottom: 12px;
+    border-radius: var(--radio);
+    background: linear-gradient(135deg, var(--oscuro), #2b2f38);
+    color: var(--blanco);
+}
+
+.hero h1 {
+    margin: 0 0 8px;
+    font-size: 2rem;
+}
+
+.hero p {
+    margin: 0;
+    color: #d1d5db;
+}
+
+/* ---------- Planes ---------- */
+.planes {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 18px;
+}
+
+.tarjeta {
+    padding: 24px 18px;
+    text-align: center;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-top: 5px solid var(--acento);
+    border-radius: var(--radio);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.tarjeta h3 {
+    margin: 0 0 8px;
+    font-size: 1.2rem;
+}
+
+.precio {
+    margin: 0;
+    font-size: 1.7rem;
+    font-weight: 800;
+    color: var(--acento);
+}
+
+/* ---------- Formularios ---------- */
+form {
+    display: grid;
+    gap: 8px;
+    max-width: 440px;
+}
+
+label {
+    font-weight: 600;
+    margin-top: 6px;
+}
+
+input,
+select,
+button {
+    font: inherit;
+    padding: 12px 14px;
+    border-radius: 10px;
+}
+
+input,
+select {
+    border: 1px solid var(--borde);
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: var(--acento);
+    box-shadow: 0 0 0 4px rgba(255, 90, 31, 0.15);
+    background: var(--blanco);
+}
+
+small {
+    color: var(--suave);
+}
+
+button {
+    margin-top: 12px;
+    border: none;
+    background: var(--acento);
+    color: var(--blanco);
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background: var(--acento-oscuro);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ---------- Resultado ---------- */
+.mensaje {
+    margin: 8px 0 24px;
+    padding: 18px 20px;
+    background: #fff7f3;
+    border-left: 5px solid var(--acento);
+    border-radius: 10px;
+    font-size: 1.1rem;
+}
+
+.mensaje p {
+    margin: 0;
+}
+
+.boton-enlace {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 10px;
+    background: var(--oscuro);
+    color: var(--blanco);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.boton-enlace:hover {
+    background: var(--acento);
+}
+
+/* ---------- Pie ---------- */
+.pie {
+    background: var(--oscuro);
+    color: #9ca3af;
+    text-align: center;
+    padding: 18px;
+    font-size: 0.9rem;
+}
+
+.pie p {
+    margin: 0;
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 600px) {
+    .contenido {
+        margin: 16px;
+        padding: 20px;
+        width: auto;
+    }
+
+    .cabecera__interior {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+}
